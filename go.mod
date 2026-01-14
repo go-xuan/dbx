@@ -1,4 +1,4 @@
-module github/go-xuan/dbx
+module github.com/go-xuan/dbx
 
 go 1.18
 
