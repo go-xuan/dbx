@@ -19,9 +19,13 @@ type CommentTabler interface {
 }
 
 // InitGormTable 初始化gorm表
-func InitGormTable(db *gorm.DB, tables ...interface{}) error {
-	if db == nil || len(tables) == 0 {
+func InitGormTable(source string, tables ...interface{}) error {
+	if len(tables) == 0 {
 		return nil
+	}
+	db := GetGormDB(source)
+	if db == nil {
+		return errorx.Sprintf("no gorm db found for source: %s", source)
 	}
 	migrator := db.Migrator()
 	for _, table := range tables {
