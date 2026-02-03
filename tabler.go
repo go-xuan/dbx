@@ -25,8 +25,9 @@ func InitGormTable(source string, tables ...interface{}) error {
 	}
 	db := GetGormDB(source)
 	if db == nil {
-		return errorx.Sprintf("no gorm db found for source: %s", source)
+		return errorx.Sprintf("get gorm.DB failed for source: %s", source)
 	}
+
 	migrator := db.Migrator()
 	for _, table := range tables {
 		if migrator.HasTable(table) {
