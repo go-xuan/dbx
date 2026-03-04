@@ -2,23 +2,24 @@ package dbx
 
 import (
 	"github.com/go-xuan/configx"
+	"github.com/go-xuan/utilx/errorx"
 	log "github.com/sirupsen/logrus"
 )
 
 func init() {
 	RegisterClientBuilder("gorm", GormClientBuilder) // 注册gorm客户端构建器
-	Init()                                           // 初始化数据库
 }
 
-func Init() {
+func Initialize() error {
 	logger := log.WithField("package", "dbx")
 	if err := configx.LoadConfigurator(&Configs{}); err == nil && Initialized() {
-		logger.Info("initialized success")
-		return
+		logger.Info("initialize success")
+		return nil
 	}
 	if err := configx.LoadConfigurator(&Config{}); err == nil && Initialized() {
-		logger.Info("initialized success")
-		return
+		logger.Info("initialize success")
+		return nil
 	}
-	logger.Warn("initialized failed")
+	logger.Warn("initialize failed")
+	return errorx.New("initialize dbx failed")
 }
