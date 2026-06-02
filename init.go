@@ -21,5 +21,5 @@ func Initialize() error {
 		return nil
 	}
 	logger.Warn("initialize failed")
-	return errorx.New("initialize dbx failed")
+	return errorx.New("failed to initialize dbx")
 }
