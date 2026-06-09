@@ -3,8 +3,8 @@ module github.com/go-xuan/dbx
 go 1.25
 
 require (
-	github.com/go-xuan/configx v1.26.10
-	github.com/go-xuan/nacosx v1.26.10
+	github.com/go-xuan/configx v1.26.14
+	github.com/go-xuan/nacosx v1.26.14
 	github.com/go-xuan/typex v1.26.4
 	github.com/go-xuan/utilx v1.26.6
 	github.com/sirupsen/logrus v1.9.4
@@ -35,7 +35,7 @@ require (
 	github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742 // indirect
 	github.com/nacos-group/nacos-sdk-go v1.1.6 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/rogpeppe/go-internal v1.14.1 // indirect
+	github.com/rogpeppe/go-internal v1.15.0 // indirect
 	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
 	go.uber.org/atomic v1.6.0 // indirect
 	go.uber.org/multierr v1.5.0 // indirect
